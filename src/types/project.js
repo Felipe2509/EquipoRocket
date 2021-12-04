@@ -6,16 +6,21 @@ const projectType = gql`
         name: String
         lastName: String
         phone: String
+        role: String
+        status: String
         email: String!
         password: String!
-        projects: [project]
     }
     type Project{
         _id: ID!
         name: String
-        description: String
-        topic: String
-        owner: ID
+        generalObjective: String
+        specificObjectives: String
+        budget: Number
+        startDate: Date
+        endDate: Date
+        leader_id: Schema.Types.ObjectId
+        status: String
     }
     type Query{
         getProject:[Project]
