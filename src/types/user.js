@@ -1,49 +1,39 @@
-const { model } = require("mongoose");
-
 const{gql} = require('apollo-server-express')
 
 const userType = gql`
-    type User{
-        _id: ID !
+    type user{
+        _id: ID!
         name: String
         lastName: String
+        documentId: Number
         phone: String
         role: String
         status: String
         email: String!
         password: String!
     }
-    type Project{
-        _id: ID!
-        name: String
-        generalObjective: String
-        specificObjectives: String
-        budget: Number
-        startDate: Date
-        endDate: Date
-        leader_id: Schema.Types.ObjectId
-        status: String
-    }
     type Query{
-        getUsers:[User]
-        getUserById(_id:String): User
+        getUsers:[user]
+        getUserById(_id:String): user
     }
     type Mutation{
         createUser(
             name: String
             lastName: String
+            documentId: Number
             phone: String
             email: String!
             password: String!
-        ): User
+        ): user
         updateUser(
             _id: ID !
             name: String
             lastName: String
+            documentId: Number
             phone: String
             email: String!
             password: String!
-        ): User
+        ): user
     }`;
 
 module.exports = {userType}

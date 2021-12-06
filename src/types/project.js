@@ -29,15 +29,24 @@ const projectType = gql`
     type Mutation{
         createProject{
             name: String
-            description: String
-            topic: String
-            owner: ID 
+            generalObjective: String
+            specificObjectives: String
+            budget: Number
+            startDate: Date
+            endDate: Date
+            leader_id: Schema.Types.ObjectId
+            status: String
         }: Project
         updateProject{
             _id: ID!
             name: String
-            description: String
-            topic: String
+            generalObjective: String
+            specificObjectives: String
+            budget: Number
+            startDate: Date
+            endDate: Date
+            leader_id: Schema.Types.ObjectId
+            status: String
         }: Project
     }`
 

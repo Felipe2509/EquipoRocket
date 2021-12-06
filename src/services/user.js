@@ -12,7 +12,7 @@ getUser = async ()=>{
 }
 
 getUserById = async(userId) =>{
-    let user = await User.findById(userId).populate('projects')
+    let user = await User.findById(userId)
     return user
 }
 

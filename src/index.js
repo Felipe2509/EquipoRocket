@@ -11,7 +11,7 @@ const server = new ApolloServer({
     resolvers:resolvers
 })
 
-mongoose.connect('mongodb+srv://admin:<password>@equipo-rocket.ow2cf.mongodb.net/graphi', async() => {
+mongoose.connect('mongodb+srv://admin:admin@equipo-rocket.ow2cf.mongodb.net/equipo-rocket', async() => {
     console.log('Conexion a base de datos exitosa');
     app.listen(5010, async()=>{
         await server.start()

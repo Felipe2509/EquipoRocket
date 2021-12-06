@@ -1,24 +1,24 @@
-constprojectService = require('../services/project')
+const projectService = require('../services/project')
 
 const projectResolvers = {
     Query:{
         getProject: async(parent, args)=>{
-            let project = projectService.getProjects()
+            let project = await projectService.getProjects()
             return project
         },
         getProjectById: async(parent, args)=>{
-            let project = ProjectService.getProjectById(args._id)
+            let project = await projectService.getProjectById(args._id)
+            return project
+        }
+    },
+    Mutation:{
+        createProject: async(parent, args)=>{
+            let project = await projectService.createProject(args)
             return project
         },
-        Mutation:{
-            createProject: async(parent, args)=>{
-                let project = projectService.createProject(args)
-                return project
-            },
-            updateProject: async(parent, args)=>{
-                let project = projectService.updateProject(args._id, args)
-                return project
-            }
+        updateProject: async(parent, args)=>{
+            let project = await projectService.updateProject(args._id, args)
+            return project
         }
     }
 }

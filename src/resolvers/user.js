@@ -2,9 +2,9 @@ const userService = require('../services/user')
 
 const userResolvers = {
     Query:{
-        getusers:async(parent, args)=>{
+        getUsers:async()=>{
             //logica del proceso
-            let users = userService.getUsers()
+            let users = await userService.getUsers()
             return users
         },
         getUserById: async(parent, args)=>{
@@ -15,13 +15,14 @@ const userResolvers = {
     },
     Mutation:{
         createUser: async(parent, args) =>{
-            let user = await userService.CreateUser(args)
+            let user = await userService.createUser(args)
             return user
         },
-        updateUser: async(paren, args)=>{
-            let user_update = userService.updateUser(args._id, args)
+        updateUser: async(parent, args)=>{
+            let user_update = await userService.updateUser(args._id, args)
             return user_update
         }
+
     }
 }
 
