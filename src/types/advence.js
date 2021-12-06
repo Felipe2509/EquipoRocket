@@ -16,7 +16,7 @@ const advanceType = gql`
         budget: Number
         startDate: Date
         endDate: Date
-        leader_id: Schema.Types.ObjectId
+        leader_id: ID
         status: String
     }
     type Query{
@@ -37,7 +37,6 @@ const advanceType = gql`
             description: String
             Observations: String
         }: Advance
-    }
-`
+    }`;
 
 module.exports =  {advanceType}

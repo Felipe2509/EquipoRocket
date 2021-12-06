@@ -24,7 +24,7 @@ const enrollmentType = gql`
         budget: Number
         startDate: Date
         endDate: Date
-        leader_id: Schema.Types.ObjectId
+        leader_id: ID
         status: String
     }
     type Query{
@@ -40,7 +40,6 @@ const enrollmentType = gql`
             _id: ID!
             project_id: ID!
             user_id: ID!
-        }
-    }
-`
+        }: Enrollment
+    }`;
 module.exports = {enrollmentType}

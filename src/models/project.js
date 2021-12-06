@@ -24,7 +24,6 @@ const ProjectSchema = new Schema({
     },
     leader_id:{
         type: Schema.Types.ObjectId,
-        ref: User,
         required: true
     },
     status:{

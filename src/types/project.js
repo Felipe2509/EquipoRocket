@@ -19,12 +19,12 @@ const projectType = gql`
         budget: Number
         startDate: Date
         endDate: Date
-        leader_id: Schema.Types.ObjectId
+        leader_id: ID
         status: String
     }
     type Query{
         getProject:[Project]
-        getPrjectById(_id:String):Project
+        getPrjectById(_id:String): Project
     }
     type Mutation{
         createProject{
@@ -34,7 +34,7 @@ const projectType = gql`
             budget: Number
             startDate: Date
             endDate: Date
-            leader_id: Schema.Types.ObjectId
+            leader_id: ID
             status: String
         }: Project
         updateProject{
@@ -45,9 +45,9 @@ const projectType = gql`
             budget: Number
             startDate: Date
             endDate: Date
-            leader_id: Schema.Types.ObjectId
+            leader_id: ID
             status: String
         }: Project
-    }`
+    }`;
 
 module.exports={projectType}

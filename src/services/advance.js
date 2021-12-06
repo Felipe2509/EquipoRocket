@@ -1,7 +1,7 @@
 const {modelNames} = require('mongoose')
 
 const advance = require('../models/advance')
-const projectService = require('./project')
+
 
 createAdvance = async(advance)=>{
     let advanceInstance = new this.advance(advance)
@@ -20,8 +20,8 @@ getAdvancesById = async(advanceId)=>{
 }
 
 updateAdvance = async(advanceId, advance)=>{
-    let advance =await this.advance.findByIdAndUpdate(advanceId, advance, {new:true})
-    return advance
+    let Advance =await this.advance.findByIdAndUpdate(advanceId, advance, {new:true})
+    return Advance
 }
 
 module.exports = {
