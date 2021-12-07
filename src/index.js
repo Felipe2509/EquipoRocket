@@ -19,3 +19,5 @@ mongoose.connect('mongodb+srv://admin:admin@equipo-rocket.ow2cf.mongodb.net/equi
         console.log("servidor inicializado en puerto 5010");
     })
 })
+
+//mongodb+srv://admin:admin@equipo-rocket.ow2cf.mongodb.net/equipo-rocket-db
