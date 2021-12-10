@@ -1,5 +1,5 @@
-const {projectType } = require('./project')
-const {userType } = require('./user')
+const {projectType} = require('./project')
+const {userType} = require('./user')
 const {enrollmentType} = require('./enrollment')
 const {advanceType} = require('./advence')
 

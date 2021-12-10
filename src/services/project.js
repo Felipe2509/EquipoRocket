@@ -1,7 +1,7 @@
 const { modelNames } = require("mongoose")
 
-const Project = require('../models/project')
-const userService = require('./user')
+const {Project} = require('../models/project')
+const {userService} = require('./user')
 
 createProject = async(project)=>{
     let projectInstance = new Project(project)
@@ -15,7 +15,7 @@ getProjects = async()=>{
     return projects
 }
 
-getProjectsById = async(projectId)=>{
+getProjectById = async(projectId)=>{
     let project = await Project.findById(projectId).exec()
     return project
 }
@@ -28,6 +28,6 @@ updateProject = async(projectId, project)=>{
 module.exports = {
     createProject,
     getProjects,
-    getProjectsById,
+    getProjectById,
     updateProject
 }

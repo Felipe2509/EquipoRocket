@@ -5,7 +5,7 @@ const userType = gql`
         _id: ID!
         name: String
         lastName: String
-        documentId: Number
+        documentId: Int
         phone: String
         role: String
         status: String
@@ -13,27 +13,27 @@ const userType = gql`
         password: String!
     }
     type Query{
-        getUsers:[user]
-        getUserById(_id:String): user
+        getUser:[User]
+        getUserById(_id:String): User
     }
     type Mutation{
-        createUser{
+        createUser(
             name: String
             lastName: String
-            documentId: Number
+            documentId: Int
             phone: String
             email: String!
             password: String!
-        }: User
-        updateUser{
+        ): User
+        updateUser(
             _id: ID!
             name: String
             lastName: String
-            documentId: Number
+            documentId: Int
             phone: String
             email: String!
             password: String!
-        }: User
+        ): User
     }`;
 
 module.exports = {userType}

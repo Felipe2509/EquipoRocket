@@ -2,9 +2,9 @@ const userService = require('../services/user')
 
 const userResolvers = {
     Query:{
-        getUsers:async()=>{
+        getUser:async()=>{
             //logica del proceso
-            let users = await userService.getUsers()
+            let users = await userService.getUser()
             return users
         },
         getUserById: async(parent, args)=>{

@@ -1,6 +1,6 @@
 const {modelNames} = require("mongoose")
 
-const enrollment  = require('../models/enrollment')
+const {enrollment}  = require('../models/enrollment')
 
 createEnrollment = async(enrollment)=>{
     let enrollmentInstance = new this.enrollment(enrollment)
@@ -13,10 +13,11 @@ getEnrollments = async()=>{
     return enrollments
 }
 
-getEnrollmentsById = async(enrollmentId)=>{
+getEnrollmentById = async(enrollmentId)=>{
     let enrollment = await this.enrollment.findById(enrollmentId).exec()
     return enrollment
 }
+
 
 updateEnrollment = async(enrollmentId, enrollment)=>{
     let newEnrollment = await this.enrollment.findByIdAndReplace(enrollmentId, enrollment, {new:true})
@@ -26,6 +27,6 @@ updateEnrollment = async(enrollmentId, enrollment)=>{
 module.exports = {
     createEnrollment,
     getEnrollments,
-    getEnrollmentsById,
+    getEnrollmentById,
     updateEnrollment
 }

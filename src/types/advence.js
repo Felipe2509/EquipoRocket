@@ -1,10 +1,13 @@
 const{gql} = require('apollo-server-express')
 
+
 const advanceType = gql`
+
+
     type Advance{
         _id: ID!
         project_id: ID!
-        addDate: Date!
+        addDate: String!
         description: String
         Observations: String
     }
@@ -13,30 +16,30 @@ const advanceType = gql`
         name: String
         generalObjective: String
         specificObjectives: String
-        budget: Number
-        startDate: Date
-        endDate: Date
+        budget: Int
+        startDate: String
+        endDate: String
         leader_id: ID
         status: String
     }
     type Query{
-        getAdvances: [Advance]
-        getAdvancesById(_id: ID): Advance
+        getAdvance: [Advance]
+        getAdvanceById(_id: ID): Advance
     }
     type Mutation{
-        createAdvance{
+        createAdvance(
             project_id: ID!
-            addDate: Date!
+            addDate: String!
             description: String
             Observations: String
-        }: Advance
-        updateAdvance{
+        ): Advance
+        updateAdvance(
             _id: ID!
             project_id: ID!
-            addDate: Date!
+            addDate: String!
             description: String
             Observations: String
-        }: Advance
+        ): Advance
     }`;
 
 module.exports =  {advanceType}

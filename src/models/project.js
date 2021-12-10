@@ -17,10 +17,12 @@ const ProjectSchema = new Schema({
         type: Number
     },
     startDate:{
-        type: Date
+        //type: Date
+        type: String,
     },
     endDate:{
-        type: Date
+        //type: Date
+        type: String,
     },
     leader_id:{
         type: Schema.Types.ObjectId,

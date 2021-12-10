@@ -2,7 +2,7 @@ const{gql} = require('apollo-server-express')
 
 const projectType = gql`
     type User{
-        _id: ID !
+        _id: ID!
         name: String
         lastName: String
         phone: String
@@ -16,38 +16,38 @@ const projectType = gql`
         name: String
         generalObjective: String
         specificObjectives: String
-        budget: Number
-        startDate: Date
-        endDate: Date
+        budget: Int
+        startDate: String
+        endDate: String
         leader_id: ID
         status: String
     }
     type Query{
         getProject:[Project]
-        getPrjectById(_id:String): Project
+        getProjectById(_id:String): Project
     }
     type Mutation{
-        createProject{
+        createProject(
             name: String
             generalObjective: String
             specificObjectives: String
-            budget: Number
-            startDate: Date
-            endDate: Date
+            budget: Int
+            startDate: String
+            endDate: String
             leader_id: ID
             status: String
-        }: Project
-        updateProject{
+        ): Project
+        updateProject(
             _id: ID!
             name: String
             generalObjective: String
             specificObjectives: String
-            budget: Number
-            startDate: Date
-            endDate: Date
+            budget: Int
+            startDate: String
+            endDate: String
             leader_id: ID
             status: String
-        }: Project
+        ): Project
     }`;
 
 module.exports={projectType}

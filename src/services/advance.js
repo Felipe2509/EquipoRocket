@@ -1,6 +1,6 @@
 const {modelNames} = require('mongoose')
 
-const advance = require('../models/advance')
+const {advance} = require('../models/advance')
 
 
 createAdvance = async(advance)=>{
@@ -9,12 +9,12 @@ createAdvance = async(advance)=>{
     return created_advance
 }
 
-getAdvances = async()=>{
+getAdvance = async()=>{
     let advances = await advance.find({})
     return advances
 }
 
-getAdvancesById = async(advanceId)=>{
+getAdvanceById = async(advanceId)=>{
     let advances = await advance.findById(advanceId)
     return advances
 }
@@ -26,7 +26,7 @@ updateAdvance = async(advanceId, advance)=>{
 
 module.exports = {
     createAdvance,
-    getAdvances,
-    getAdvancesById,
+    getAdvance,
+    getAdvanceById,
     updateAdvance
 }

@@ -21,25 +21,25 @@ const enrollmentType = gql`
         name: String
         generalObjective: String
         specificObjectives: String
-        budget: Number
-        startDate: Date
-        endDate: Date
+        budget: Int
+        startDate: String
+        endDate: String
         leader_id: ID
         status: String
     }
     type Query{
         getEnrollment: [Enrollment]
-        getEnrollmentsById(_id:String): Enrollment
+        getEnrollmentById(_id:String): Enrollment
     }
     type Mutation{
-        createEnrollment{
+        createEnrollment(
             project_id: ID!
             user_id: ID!
-        }: Enrollment
-        updateEnrollment{
+        ): Enrollment
+        updateEnrollment(
             _id: ID!
             project_id: ID!
             user_id: ID!
-        }: Enrollment
+        ): Enrollment
     }`;
 module.exports = {enrollmentType}

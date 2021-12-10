@@ -1,9 +1,9 @@
-const User = require('../models/user')
+const {User} = require('../models/user')
 
 createUser = async(user) =>{
     let userInstance = new User(user)
-    user = await userInstance.save()
-    return user
+    newUser = await userInstance.save()
+    return newUser
 }
 
 getUser = async ()=>{
@@ -12,8 +12,8 @@ getUser = async ()=>{
 }
 
 getUserById = async(userId) =>{
-    let user = await User.findById(userId)
-    return user
+    let userById = await User.findById(userId)
+    return userById
 }
 
 updateUser = async (userId, user)=>{

@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const Project = require('./project')
 
+
 const AdvanceSchema = new Schema({
     project_id:{
         type: Schema.Types.ObjectId,
@@ -9,7 +10,8 @@ const AdvanceSchema = new Schema({
         required: true
     },
     addDate:{
-        type: Date,
+        //type: Date
+        type: String,
         required: true
     },
     description:{

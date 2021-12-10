@@ -7,22 +7,18 @@ const enrollmentResolvers = {
             return enrollment
         },
         getEnrollmentById: async(parent, args)=>{
-            let enrollment = await enrollmentService.getEnrollmentById(args._id)
-            return enrollment
-        },
-        getEnrollmentByIdUser: async(parent, args)=>{
-            let enrollment = await enrollmentService.getEnrollmentByIdUser(args.user_id)
-            return enrollment
+            let enrollmentById = await enrollmentService.getEnrollmentById(args._id)
+            return enrollmentById
         }
     },
     Mutation:{
         createEnrollment: async(parent, args)=>{
-            let enrollment = await enrollmentService.createEnrollment(args)
-            return enrollment
+            let newEnrollment = await enrollmentService.createEnrollment(args)
+            return newEnrollment
         },
         updateEnrollment: async(parent, args)=>{
-            let enrollment = await enrollmentService.updateEnrollment(args._id, args)
-            return enrollment
+            let updateEnrollment = await enrollmentService.updateEnrollment(args._id, args)
+            return updateEnrollment
         }
     }
 }
